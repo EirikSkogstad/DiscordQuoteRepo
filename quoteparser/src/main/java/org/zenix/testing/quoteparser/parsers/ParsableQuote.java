@@ -20,6 +20,8 @@ public interface ParsableQuote {
 
     /**
      * Returns the expected format of this implementation, as a string.
+     * Should be in a format like this:
+     * {@code <quotetext> <hyphen> <author> <single space> <year>}
      * @return
      */
     String getExpectedFormatString();
