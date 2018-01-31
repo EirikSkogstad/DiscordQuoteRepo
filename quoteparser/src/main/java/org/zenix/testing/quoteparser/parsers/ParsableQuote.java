@@ -8,8 +8,9 @@ public interface ParsableQuote {
      * Use isCorrectFormat() method to check if Quote is parsable.
      * @param rawString raw quote to parse into an Quote
      * @return Quote that was parsed.
+     * @throws QuoteParsingException if quote could not be parsed.
      */
-    Quote parse(String rawString);
+    Quote parse(String rawString) throws QuoteParsingException;
 
     /**
      * Checks a string to see if it is correct format to be parsed by class implementation.
