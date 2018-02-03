@@ -1,6 +1,7 @@
 package org.zenix.testing.quoteparser.parsers;
 
-import org.zenix.testing.personaldiscordpage.domain.Quote;
+
+import org.zenix.testing.quoteparser.models.Quote;
 
 public class ParserYear implements ParsableQuote {
     // Note, currently doesnt work with Æ, Ø "non ascii" characters
@@ -16,7 +17,7 @@ public class ParserYear implements ParsableQuote {
             throw new QuoteParsingException("String cannot be parsed! It's in a wrong format.   Expected format: " + getExpectedFormatString());
         }
 
-        String quotetext = split[0].trim();
+        String quoteText = split[0].trim();
         String rest = split[1].trim();
         // TODO trim quotes from quote text, if exists.
 
@@ -28,7 +29,7 @@ public class ParserYear implements ParsableQuote {
                 .substring(0, rest.length() - 4)
                 .trim();
 
-        return new Quote(author, quotetext, year);
+        return new Quote(author, quoteText, year);
     }
 
     @Override

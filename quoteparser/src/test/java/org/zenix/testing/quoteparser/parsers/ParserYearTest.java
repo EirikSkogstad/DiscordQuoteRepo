@@ -2,7 +2,7 @@ package org.zenix.testing.quoteparser.parsers;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.zenix.testing.personaldiscordpage.domain.Quote;
+import org.zenix.testing.quoteparser.models.Quote;
 
 import static org.junit.Assert.*;
 

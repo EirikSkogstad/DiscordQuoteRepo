@@ -1,6 +1,6 @@
 package org.zenix.testing.quoteparser.parsers;
 
-import org.zenix.testing.personaldiscordpage.domain.Quote;
+import org.zenix.testing.quoteparser.models.Quote;
 
 public class ParserDateMonthYear implements ParsableQuote {
     @Override
