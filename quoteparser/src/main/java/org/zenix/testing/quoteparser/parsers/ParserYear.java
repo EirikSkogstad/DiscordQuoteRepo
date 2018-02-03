@@ -2,8 +2,6 @@ package org.zenix.testing.quoteparser.parsers;
 
 import org.zenix.testing.personaldiscordpage.domain.Quote;
 
-import java.util.regex.Pattern;
-
 public class ParserYear implements ParsableQuote {
     // Note, currently doesnt work with Æ, Ø "non ascii" characters
     public static final String QUOTE_PATTERN = "^.+\\n?\\s*-\\s*\\w+\\s\\d{4}$";
@@ -18,14 +16,19 @@ public class ParserYear implements ParsableQuote {
             throw new QuoteParsingException("String cannot be parsed! It's in a wrong format.   Expected format: " + getExpectedFormatString());
         }
 
-        String quotetext = split[0];
+        String quotetext = split[0].trim();
         String rest = split[1].trim();
         // TODO trim quotes from quote text, if exists.
 
-        // Get the 4 last digits, the year.
-        String year = rest.substring(rest.length() - 4, rest.length());
+        // Get the 4 last digits, the year. The the rest should be the author.
+        String year = rest
+                .substring(rest.length() - 4, rest.length())
+                .trim();
+        String author = rest
+                .substring(0, rest.length() - 4)
+                .trim();
 
-        return null;
+        return new Quote(author, quotetext, year);
     }
 
     @Override

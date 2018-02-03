@@ -18,8 +18,16 @@ public class Quote {
     private String author;
     @NotBlank
     private String text;
+    @NotBlank
+    private String date;
 
     public Quote() {
+    }
+
+    public Quote(String author, String text, String date) {
+        this.author = author;
+        this.text = text;
+        this.date = date;
     }
 
     public Long getId() {
@@ -44,5 +52,13 @@ public class Quote {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
