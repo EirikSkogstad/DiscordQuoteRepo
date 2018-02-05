@@ -1,2 +1,2 @@
 server:
-  context-path: /quotesapi/quotes
+  context-path: /quotesapi/
