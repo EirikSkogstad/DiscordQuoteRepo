@@ -1,24 +1,24 @@
-package org.zenix.testing.quoteparser.parsers;
+package org.zenix.testing.quoteparser.parsers
 
+import org.zenix.testing.quoteparser.models.Quote
 
-import org.zenix.testing.quoteparser.models.Quote;
-
-public interface ParsableQuote {
+interface ParsableQuote {
     /**
      * Tries to format a string into a Quote. Will throw an exception if quote was not parsable.
      * Use isCorrectFormat() method to check if Quote is parsable.
      * @param rawString raw quote to parse into an Quote
      * @return Quote that was parsed.
-     * @throws QuoteParsingException if quote could not be parsed.
+     * @throws QuoteParsingExceptionOld if quote could not be parsed.
      */
-    Quote parse(String rawString) throws QuoteParsingException;
+    @Throws(QuoteParsingExceptionOld::class)
+    fun parse(rawString: String): Quote
 
     /**
      * Checks a string to see if it is correct format to be parsed by class implementation.
      * @param rawString to check
      * @return is rawString parsable?
      */
-    boolean isCorrectFormat(String rawString);
+    fun isCorrectFormat(rawString: String): Boolean
 
     /**
      * Returns the expected format of this implementation, as a string.
@@ -26,5 +26,5 @@ public interface ParsableQuote {
      * {@code <quotetext> <hyphen> <author> <single space> <year>}
      * @return
      */
-    String getExpectedFormatString();
+    fun getExpectedFormatString(): String
 }
