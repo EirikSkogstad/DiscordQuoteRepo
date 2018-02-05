@@ -19,7 +19,8 @@ public class ParserYear implements ParsableQuote {
 
         String quoteText = split[0].trim();
         String rest = split[1].trim();
-        // TODO trim quotes from quote text, if exists.
+
+        String textWithoutQuotes = ParserUtility.trimQuotesIfExists(quoteText);
 
         // Get the 4 last digits, the year. The the rest should be the author.
         String year = rest
@@ -29,7 +30,7 @@ public class ParserYear implements ParsableQuote {
                 .substring(0, rest.length() - 4)
                 .trim();
 
-        return new Quote(author, quoteText, year);
+        return new Quote(author, textWithoutQuotes, year);
     }
 
     @Override

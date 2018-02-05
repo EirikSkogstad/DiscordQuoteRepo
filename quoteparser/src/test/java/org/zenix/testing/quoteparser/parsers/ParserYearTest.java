@@ -16,7 +16,6 @@ public class ParserYearTest {
     public void setup() {
         validQuotes = new String[]{
                 "han stjæler jo bare ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆHHHHHH\n -Eirik 2017",
-
         };
         invalidQuotes = new String[]{
                 "\"Anders, jeg ser for meg morra di ute på alle fire og tygger på internettkabelen\" - Bergo 29.01.2018",
