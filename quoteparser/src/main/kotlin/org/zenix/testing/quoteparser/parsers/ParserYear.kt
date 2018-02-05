@@ -10,7 +10,7 @@ class ParserYear: ParsableQuote {
     override fun parse(rawString: String): Quote {
         val split = rawString.split("-")
         if (isCorrectFormat(rawString) && split.size != 2) {
-            throw QuoteParsingExceptionOld("String cannot be parsed! It's in a wrong format.   Expected format: " + getExpectedFormatString())
+            throw QuoteParsingException("String cannot be parsed! It's in a wrong format.   Expected format: " + getExpectedFormatString())
         }
 
         val quoteText = split[0].trim()

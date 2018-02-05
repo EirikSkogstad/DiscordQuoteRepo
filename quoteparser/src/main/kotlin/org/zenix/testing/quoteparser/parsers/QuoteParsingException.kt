@@ -1,3 +1,3 @@
 package org.zenix.testing.quoteparser.parsers
 
-class QuoteParsingExceptionOld(message: String) : RuntimeException(message)
+class QuoteParsingException(message: String) : RuntimeException(message)

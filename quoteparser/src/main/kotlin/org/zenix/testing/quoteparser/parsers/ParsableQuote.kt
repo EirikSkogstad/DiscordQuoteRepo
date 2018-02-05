@@ -8,9 +8,9 @@ interface ParsableQuote {
      * Use isCorrectFormat() method to check if Quote is parsable.
      * @param rawString raw quote to parse into an Quote
      * @return Quote that was parsed.
-     * @throws QuoteParsingExceptionOld if quote could not be parsed.
+     * @throws QuoteParsingException if quote could not be parsed.
      */
-    @Throws(QuoteParsingExceptionOld::class)
+    @Throws(QuoteParsingException::class)
     fun parse(rawString: String): Quote
 
     /**

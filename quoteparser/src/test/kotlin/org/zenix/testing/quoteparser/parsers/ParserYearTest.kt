@@ -28,10 +28,9 @@ class ParserYearTest {
                 assertEquals("Eirik", author)
                 assertEquals("2017", date)
                 assertEquals("han stjæler jo bare ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆHHHHHH", text)
-            } catch (e: QuoteParsingExceptionOld) {
+            } catch (e: QuoteParsingException) {
                 fail("Could not parse " + validQuote)
             }
-
         }
     }
 }
