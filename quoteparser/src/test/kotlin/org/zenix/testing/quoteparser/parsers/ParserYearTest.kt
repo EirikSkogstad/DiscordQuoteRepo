@@ -34,8 +34,8 @@ class ParserYearTest {
         for ((i, validQuote) in validQuotes.withIndex()) {
             try {
                 val (author, text, date) = parserYear.parse(validQuote)
-
                 val expectedQuote = expectedResults[i]
+
                 assertEquals(expectedQuote.author, author)
                 assertEquals(expectedQuote.text, text)
                 assertEquals(expectedQuote.date, date)

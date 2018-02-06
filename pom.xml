@@ -11,6 +11,7 @@
     <modules>
         <module>quoteapi</module>
         <module>quoteparser</module>
+        <module>quotebot</module>
     </modules>
 
     <properties>
