@@ -1,3 +1,5 @@
+import org.zenix.testing.quoteparser.models.Quote;
+import org.zenix.testing.quoteparser.parsers.ParserYear;
 import sx.blah.discord.api.ClientBuilder;
 import sx.blah.discord.api.IDiscordClient;
 import sx.blah.discord.api.events.EventDispatcher;
@@ -26,8 +28,15 @@ public class SewerQuotesBot {
     }
 
     private void printQuotesFromChannel(IDiscordClient client) throws InterruptedException {
+        ParserYear parserYear = new ParserYear();
         for (IMessage message : client.getChannelByID(312686431921242116L).getFullMessageHistory()) {
-            System.out.println(message);
+            String messageString = message.toString();
+
+            if (parserYear.isCorrectFormat(messageString)) {
+                Quote quote = parserYear.parse(messageString);
+
+                System.out.println(quote.getAuthor());
+            }
         }
     }
 

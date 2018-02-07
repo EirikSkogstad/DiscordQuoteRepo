@@ -8,6 +8,7 @@ class ParserYear: ParsableQuote {
     private val quotePattern = ("^.+\\n?\\s*-\\s*\\w+\\s\\d{4}$").toRegex()
 
     override fun parse(rawString: String): Quote {
+        // FIXME Split does not take into account that "-" may be a part of the quote, and will fail.
         val split = rawString.split("-")
         if (isCorrectFormat(rawString) && split.size != 2) {
             throw QuoteParsingException("String cannot be parsed! It's in a wrong format.   Expected format: " + getExpectedFormatString())
