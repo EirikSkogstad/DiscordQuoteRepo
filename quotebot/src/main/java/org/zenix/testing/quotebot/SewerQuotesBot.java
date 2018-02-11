@@ -1,13 +1,11 @@
+package org.zenix.testing.quotebot;
+
 import org.zenix.testing.quoteparser.models.Quote;
 import org.zenix.testing.quoteparser.parsers.ParserYear;
 import sx.blah.discord.api.ClientBuilder;
 import sx.blah.discord.api.IDiscordClient;
 import sx.blah.discord.api.events.EventDispatcher;
-import sx.blah.discord.api.events.IListener;
-import sx.blah.discord.handle.impl.events.guild.channel.message.MessageReceivedEvent;
-import sx.blah.discord.handle.obj.IChannel;
 import sx.blah.discord.handle.obj.IMessage;
-import sx.blah.discord.util.*;
 
 public class SewerQuotesBot {
     // TODO https://jitpack.io/com/github/austinv11/Discord4j/2.9.3/javadoc/

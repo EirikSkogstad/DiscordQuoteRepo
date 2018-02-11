@@ -1,4 +1,4 @@
-package org.zenix.testing.personaldiscordpage.domain;
+package org.zenix.testing.quoteapi.domain;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

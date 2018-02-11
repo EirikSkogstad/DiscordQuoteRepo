@@ -1,12 +1,10 @@
-package org.zenix.testing.personaldiscordpage.domain;
+package org.zenix.testing.quoteapi.domain;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 
 @Entity
 public class Quote {

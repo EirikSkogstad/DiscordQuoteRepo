@@ -1,4 +1,4 @@
-package org.zenix.testing.personaldiscordpage;
+package org.zenix.testing.quoteapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
