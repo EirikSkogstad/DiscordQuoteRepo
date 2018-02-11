@@ -8,7 +8,7 @@ import org.zenix.testing.quoteparser.models.Quote
 class ParserYearTest {
     private val parserYear: ParserYear = ParserYear()
     private val validQuotes: Array<String> = arrayOf(
-            "han stjæler jo bare ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆHHHHHH\n -Eirik 2017",
+            "han stjæler jo bare    ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆHHHHHH\n - Eirik 2017",
             "\"Billy Motlem\" - Sloth 2018",
             "Er litt som at jeg fikk-lov til å smake til på NILU i dag \n-Jeffe 2017")
     private val invalidQuotes: Array<String> = arrayOf(
@@ -16,7 +16,7 @@ class ParserYearTest {
             "Not unbearable is what we strive for here at riot games :ok_hand::skin-tone-1:\" ~Riot Phreak 26/09/2017")
 
     private val expectedResults: Array<Quote> = arrayOf(
-            Quote("Eirik", "han stjæler jo bare ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆHHHHHH", "2017"),
+            Quote("Eirik", "han stjæler jo bare    ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆHHHHHH", "2017"),
             Quote("Sloth", "Billy Motlem", "2018"),
             Quote("Jeffe", "Er litt som at jeg fikk-lov til å smake til på NILU i dag", "2017")
     )

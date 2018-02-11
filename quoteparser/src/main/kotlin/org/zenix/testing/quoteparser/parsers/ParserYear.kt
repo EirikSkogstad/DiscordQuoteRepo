@@ -3,31 +3,25 @@ package org.zenix.testing.quoteparser.parsers
 import org.zenix.testing.quoteparser.models.Quote
 
 
-class ParserYear: ParsableQuote {
-    // Note, currently doesnt work with Æ, Ø "non ascii" characters
+class ParserYear : ParsableQuote {
     private val quotePattern = ("^.+\\n?\\s*-\\s*\\w+\\s\\d{4}$").toRegex()
 
     override fun parse(rawString: String): Quote {
-        // FIXME Split does not take into account that "-" may be a part of the quote, and will fail.
-        val split = rawString.split("-")
-        if (isCorrectFormat(rawString) && split.size != 2) {
-            throw QuoteParsingException("String cannot be parsed! It's in a wrong format.   Expected format: " + getExpectedFormatString())
-        }
+        val trimmedString = rawString.filter { c -> c != '\n' }
+        val length = trimmedString.length
+        val lastHyphenIndex = trimmedString.indexOfLast { c -> c == '-' }
 
-        val quoteText = split[0].trim()
-        val rest = split[1].trim()
 
-        val textWithoutQuotes = ParserUtility.trimQuotesIfExists(quoteText)
-
-        // Get the 4 last digits, the year. The the rest should be the author.
-        val year = rest
-                .substring(rest.length - 4, rest.length)
+        val year = trimmedString.substring(length - 4, length)
                 .trim()
-        val author = rest
-                .substring(0, rest.length - 4)
+        val author = trimmedString.substring(lastHyphenIndex, length - 4)
+                .filter { c -> c != '-'}
+                .trim()
+        val text = trimmedString.substring(0, lastHyphenIndex)
+                .filter { c -> c != '"' }
                 .trim()
 
-        return Quote(author, textWithoutQuotes, year)
+        return Quote(author, text, year)
     }
 
     override fun isCorrectFormat(rawString: String): Boolean {
