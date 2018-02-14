@@ -28,7 +28,11 @@ class ParserYear : ParsableQuote {
         return rawString.matches(quotePattern)
     }
 
-    override fun getExpectedFormatString(): String {
+    override fun getExpectedFormat(): String {
         return "<quotetext> <hyphen> <author> <single space> <year>"
+    }
+
+    override fun getExample(): String {
+        return "han stjæler jo bare    ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆHHHHHH\n - Eirik 2017"
     }
 }

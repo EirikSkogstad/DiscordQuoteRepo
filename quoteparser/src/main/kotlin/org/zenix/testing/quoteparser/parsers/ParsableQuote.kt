@@ -26,5 +26,10 @@ interface ParsableQuote {
      * {@code <quotetext> <hyphen> <author> <single space> <year>}
      * @return
      */
-    fun getExpectedFormatString(): String
+    fun getExpectedFormat(): String
+
+    /**
+     * Returns an example of a valid quote
+     */
+    fun getExample(): String
 }
