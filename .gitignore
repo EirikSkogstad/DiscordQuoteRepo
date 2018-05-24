@@ -36,3 +36,5 @@ target
 transaction-logs
 .flattened-pom.xml
 secrets.yml
+/webpage/node_modules/
+/webpage/.idea/
