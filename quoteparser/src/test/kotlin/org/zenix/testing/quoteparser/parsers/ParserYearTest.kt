@@ -46,7 +46,7 @@ class ParserYearTest {
                 assertEquals(expectedQuote.text, text)
                 assertEquals(expectedQuote.date, date)
             } catch (e: QuoteParsingException) {
-                fail("Could not parse " + validQuote)
+                fail("Could not parse $validQuote")
             }
         }
     }

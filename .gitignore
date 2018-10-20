@@ -2,7 +2,6 @@
 *.iml
 *.ipr
 *.iws
-*.jar
 *.sw?
 *~
 .#*
@@ -38,3 +37,4 @@ transaction-logs
 secrets.yml
 /webpage/node_modules/
 /webpage/.idea/
+/quotebot/music/

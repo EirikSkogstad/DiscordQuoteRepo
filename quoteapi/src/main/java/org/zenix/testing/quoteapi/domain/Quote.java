@@ -1,10 +1,10 @@
 package org.zenix.testing.quoteapi.domain;
 
-import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Quote {

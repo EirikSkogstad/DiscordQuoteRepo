@@ -5,6 +5,11 @@ import java.util.HashSet
 
 class ParserUtility {
     companion object {
+
+        /**
+         * Remove first and last Characters, if they are both generic characters used for quotes.
+         * Like ', " and `
+         */
         @JvmStatic
         fun trimQuotesIfExists(quote: String): String {
             val quoteCharacters = setOf("'", "\"", "`")
