@@ -1,6 +1,5 @@
 package org.zenix.testing.quotebot;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import org.zenix.testing.quoteparser.models.Quote;
 import org.zenix.testing.quoteparser.parsers.ParserYear;
 import sx.blah.discord.api.ClientBuilder;
